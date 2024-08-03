@@ -61,7 +61,7 @@ export default {
       this.loading = true
       const url = /(https?|http):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/.exec(this.input)
       if(this.select == '1' || this.select == ''){
-        this.axios.get('https://tenapi.cn/v2/video?url=' + encodeURIComponent(url[0])).then((res) => {
+        this.axios.get('https://quickso.cn/api/dspjx/?url=' + encodeURIComponent(url[0])).then((res) => {
           if(res.data.code == 200){
             if(res.data.data.music != null){
               this.music = true
@@ -84,7 +84,7 @@ export default {
         })
       }else{
         this.seen = false
-        this.axios.get('https://tenapi.cn/v2/images?url=' + encodeURIComponent(url[0])).then((res) => {
+        this.axios.get('https://quickso.cn/api/dspjx/?url=' + encodeURIComponent(url[0])).then((res) => {
           if(res.data.code == 200){
             this.iseen = true
             this.loading = false
